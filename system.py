@@ -1,6 +1,5 @@
 from experta import *
 from PIL import Image
-
 details_of_cars = []
 details_map = {}
 
@@ -27,7 +26,6 @@ def identify_car(*args):
     return details_map[str(cars_list)]
 
 
-
 def if_not_matching(car):
     print("La voiture la plus proche selon votre choix est \"", car, "\"\n")
     im = Image.open("Cars_details/Cars_photos/"+car+".jpg")
@@ -45,92 +43,92 @@ class findYourCar(KnowledgeEngine):
     @Rule(Fact(action='find_car'), NOT(Fact(BE=W())), salience=1)
     def Question_0(self):
         self.declare(
-            Fact(BE=input("Avez vous un budget élevé ~>")))  #
+            Fact(BE=input("Avez vous un budget élevé (Supérieur à 300M Dinars) ~>")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(BM=W())), salience=1)
     def Question_1(self):
         self.declare(
-            Fact(BM=input("Avez vous un budget moyen ~>")))  #
+            Fact(BM=input("Avez vous un budget moyen (Entre 80M et 300M Dinars) ~>")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(BF=W())), salience=1)
     def Question_2(self):
         self.declare(
-            Fact(BF=input("Avez vous un budget faible ~> ")))  #
+            Fact(BF=input("Avez vous un budget faible (Entre 50M et 80M Dinars)~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(CE=W())), salience=1)
     def Question_3(self):
         self.declare(
-            Fact(CE=input("Vous voulez que votre voiture consomme l'essence ~> ")))  #
+            Fact(CE=input("Vous voulez que votre voiture consomme l'essence ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(CD=W())), salience=1)
     def Question_4(self):
         self.declare(
-            Fact(CD=input(" Vous voulez que votre voiture consomme le diesel ~> ")))  #
+            Fact(CD=input(" Vous voulez que votre voiture consomme le diesel ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(P5=W())), salience=1)
     def Question_5(self):
         self.declare(
-            Fact(P5=input("Voulez-vous une voiture de 5 places ~> ")))  #
+            Fact(P5=input("Voulez-vous une voiture de 5 places ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(P2=W())), salience=1)
     def Question_6(self):
         self.declare(
-            Fact(P2=input("Voulez-vous une voiture de 2 places ~> ")))  #
+            Fact(P2=input("Voulez-vous une voiture de 2 places ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(V2=W())), salience=1)
     def Question_7(self):
         self.declare(
-            Fact(V2=input("Voulez-vous une voiture de 2 portes ~> ")))  #
+            Fact(V2=input("Voulez-vous une voiture de 2 portes ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(V4=W())), salience=1)
     def Question_8(self):
         self.declare(
-            Fact(V4=input("Voulez-vous une voiture de 4 portes ~> ")))  #
+            Fact(V4=input("Voulez-vous une voiture de 4 portes ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(A=W())), salience=1)
     def Question_9(self):
         self.declare(
-            Fact(A=input(" Voulez-vous une voiture avec une boite de vitesse automatique ~> ")))  #
+            Fact(A=input(" Voulez-vous une voiture avec une boite de vitesse automatique ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(M=W())), salience=1)
     def Question_10(self):
         self.declare(
-            Fact(M=input(" Voulez-vous une voiture avec une boite de vitesse manuelle ~> ")))  #
+            Fact(M=input(" Voulez-vous une voiture avec une boite de vitesse manuelle ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(MA=W())), salience=1)
     def Question_11(self):
         self.declare(
-            Fact(MA=input(" Vous voulez des équipement de motorisation avancé ~> ")))  #
+            Fact(MA=input(" Vous voulez des équipement de motorisation avancé ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(SA=W())), salience=1)
     def Question_12(self):
         self.declare(
-            Fact(SA=input(" Vous voulez des équipement de sécurité avancé ~> ")))  #
+            Fact(SA=input(" Vous voulez des équipement de sécurité avancé ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(CA=W())), salience=1)
     def Question_13(self):
         self.declare(
-            Fact(CA=input(" Vous voulez des équipement de confort avancée ~> ")))  #
+            Fact(CA=input(" Vous voulez des équipement de confort avancée ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(C1=W())), salience=1)
     def Question_14(self):
         self.declare(
-            Fact(C1=input(" Vous voulez une voiture de couleur Rouge ~> ")))  #
+            Fact(C1=input(" Vous voulez une voiture de couleur Rouge ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(C2=W())), salience=1)
     def Question_15(self):
         self.declare(
-            Fact(C2=input(" Vous voulez une voiture de couleur bleu ~> ")))  #
+            Fact(C2=input(" Vous voulez une voiture de couleur bleu ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(C3=W())), salience=1)
     def Question_16(self):
         self.declare(
-            Fact(C3=input(" Vous voulez une voiture de couleur noir ~> ")))  #
+            Fact(C3=input(" Vous voulez une voiture de couleur noir ~> ")))
 
     @Rule(Fact(action='find_car'), NOT(Fact(C4=W())), salience=1)
     def Question_17(self):
         self.declare(
-            Fact(C4=input(" Vous voulez une voiture de couleur blanc ~> ")))  #
+            Fact(C4=input(" Vous voulez une voiture de couleur blanche ~> ")))
 
     @Rule(Fact(action='find_car'),
           Fact(BE="oui"), Fact(BM="non"), Fact(BF="non"),
@@ -141,8 +139,10 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_1(self):
         self.declare(Fact(car="lamborghini_Rouge"))
-        im = Image.open("")
+        #print("La voiture convenable pour vous est  lamborghini_Rouge \n")
+        im = Image.open("Cars_details/Cars_photos/lamborghini_gallardo.jpg")
         im.show()
+        self.declare(Fact(clrShowed="yes"))
 
     @Rule(Fact(action='find_car'),
           Fact(BE="oui"), Fact(BM="non"), Fact(BF="non"),
@@ -155,7 +155,6 @@ class findYourCar(KnowledgeEngine):
         self.declare(Fact(car="lamborghini_Bleu"))
         im = Image.open("Cars_details/Cars_photos/lamborghini_Bleu.jpg")
         im.show()
-        self.declare(Fact(ClrShowed="yes"))
 
     @Rule(Fact(action='find_car'),
           Fact(BE="oui"), Fact(BM="non"), Fact(BF="non"),
@@ -166,10 +165,10 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_3(self):
         self.declare(Fact(car="lamborghini_Noir"))
-        im = Image.open("")
+        im = Image.open("Cars_details/Cars_photos/lamborghini_Noir.jpg")
         im.show()
 
-    @Rule(Fact(action='find_car'), 
+    @Rule(Fact(action='find_car'),
           Fact(BE="oui"), Fact(BM="non"), Fact(BF="non"),
           Fact(CE="oui"), Fact(CD="non"), Fact(P5="non"),
           Fact(P2="oui"), Fact(V4="non"), Fact(V2="oui"),
@@ -177,8 +176,8 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_4(self):
-        self.declare(Fact(car="lamborghini_blanc"))
-        im = Image.open("")
+        self.declare(Fact(car="lamborghini_Blanc"))
+        im = Image.open("Cars_details/Cars_photos/lamborghini_Blanc.jpg")
         im.show()
 
     @Rule(Fact(action='find_car'),
@@ -190,7 +189,7 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_5(self):
         self.declare(Fact(car="ferrari_Rouge"))
-        im = Image.open("")
+        im = Image.open("Cars_details/Cars_photos/ferrari_Rouge.jpg")
         im.show()
 
     @Rule(Fact(action='find_car'),
@@ -202,7 +201,7 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
     def car_6(self):
         self.declare(Fact(car="ferrari_Bleu"))
-        im = Image.open("")
+        im = Image.open("Cars_details/Cars_photos/ferrari_Bleu.jpg")
         im.show()
 
     @Rule(Fact(action='find_car'),
@@ -214,7 +213,7 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_7(self):
         self.declare(Fact(car="ferrari_Noir"))
-        im = Image.open("")
+        im = Image.open("Cars_details/Cars_photos/ferrari_Noir.jpg")
         im.show()
 
     @Rule(Fact(action='find_car'),
@@ -225,8 +224,8 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_8(self):
-        self.declare(Fact(car="ferrari_blanc"))
-        im = Image.open("")
+        self.declare(Fact(car="ferrari_Blanc"))
+        im = Image.open("Cars_details/Cars_photos/ferrari_Blanc.jpg")
         im.show()
 
     @Rule(Fact(action='find_car'),
@@ -238,7 +237,7 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_9(self):
         self.declare(Fact(car="porche_Rouge"))
-        im = Image.open("")
+        im = Image.open("Cars_details/Cars_photos/porche_Rouge.jpg")
         im.show()
 
     @Rule(Fact(action='find_car'),
@@ -249,8 +248,8 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="oui"), Fact(CA="oui"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
     def car_10(self):
-        self.declare(Fact(car="porche_Noir"))
-        im = Image.open("")
+        self.declare(Fact(car="porche_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/porche_Bleu.jpg")
         im.show()
 
     @Rule(Fact(action='find_car'),
@@ -261,8 +260,8 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="oui"), Fact(CA="oui"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_11(self):
-        self.declare(Fact(car="porche_Bleu"))
-        im = Image.open("")
+        self.declare(Fact(car="porche_Noir"))
+        im = Image.open("Cars_details/Cars_photos/porche_Noir.jpg")
         im.show()
 
     @Rule(Fact(action='find_car'),
@@ -273,8 +272,8 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="oui"), Fact(CA="oui"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_12(self):
-        self.declare(Fact(car="porche_blanc"))
-        im = Image.open("")
+        self.declare(Fact(car="porche_Blanc"))
+        im = Image.open("Cars_details/Cars_photos/porche_Blanc.jpg")
         im.show()
 
     @Rule(Fact(action='find_car'),
@@ -286,7 +285,7 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_13(self):
         self.declare(Fact(car="mercedes_Rouge"))
-        im = Image.open("")
+        im = Image.open("Cars_details/Cars_photos/mercedes_Rouge.jpg")
         im.show()
 
     @Rule(Fact(action='find_car'),
@@ -297,9 +296,10 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="non"), Fact(CA="oui"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
     def car_14(self):
-        self.declare(Fact(car="mercedes_Noir"))
-        im = Image.open("")
+        self.declare(Fact(car="mercedes_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/mercedes_Bleu.jpg")
         im.show()
+
     @Rule(Fact(action='find_car'),
           Fact(BE="oui"), Fact(BM="non"), Fact(BF="non"),
           Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
@@ -308,9 +308,10 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="non"), Fact(CA="oui"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_15(self):
-        self.declare(Fact(car="mercedes_Bleu"))
-        im = Image.open("")
+        self.declare(Fact(car="mercedes_Noir"))
+        im = Image.open("Cars_details/Cars_photos/mercedes_Noir.jpg")
         im.show()
+
     @Rule(Fact(action='find_car'),
           Fact(BE="oui"), Fact(BM="non"), Fact(BF="non"),
           Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
@@ -320,9 +321,9 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_16(self):
         self.declare(Fact(car="mercedes_Blanc"))
-        im = Image.open("")
+        im = Image.open("Cars_details/Cars_photos/mercedes_Blanc.jpg")
         im.show()
-  
+
     @Rule(Fact(action='find_car'),
           Fact(BE="oui"), Fact(BM="non"), Fact(BF="non"),
           Fact(CE="non"), Fact(CD="oui"), Fact(P5="oui"),
@@ -332,9 +333,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_17(self):
         self.declare(Fact(car="range_rover_Rouge"))
-        im = Image.open("")
+        im = Image.open("Cars_details/Cars_photos/range_rover_Rouge.jpg")
         im.show()
-    
 
     @Rule(Fact(action='find_car'),
           Fact(BE="oui"), Fact(BM="non"), Fact(BF="non"),
@@ -344,10 +344,9 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="oui"), Fact(CA="oui"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
     def car_18(self):
-        self.declare(Fact(car="range_rover_Noir"))
-        im = Image.open("")
+        self.declare(Fact(car="range_rover_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/range_rover_Bleu.jpg")
         im.show()
-
 
     @Rule(Fact(action='find_car'),
           Fact(BE="oui"), Fact(BM="non"), Fact(BF="non"),
@@ -357,10 +356,9 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="oui"), Fact(CA="oui"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_19(self):
-        self.declare(Fact(car="range_rover_Bleu"))
-        im = Image.open("")
+        self.declare(Fact(car="range_rover_Noir"))
+        im = Image.open("Cars_details/Cars_photos/Noir.jpg")
         im.show()
-
 
     @Rule(Fact(action='find_car'),
           Fact(BE="oui"), Fact(BM="non"), Fact(BF="non"),
@@ -371,9 +369,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_20(self):
         self.declare(Fact(car="range_rover_Blanc"))
-        im = Image.open("")
+        im = Image.open("Cars_details/Cars_photos/range_rover_Blanc.jpg")
         im.show()
-
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
@@ -384,8 +381,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_21(self):
         self.declare(Fact(car="BMW_Rouge"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/BMW_Rouge.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
@@ -395,10 +392,10 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
     def car_22(self):
-        self.declare(Fact(car="BMW_Noir"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
-     
+        self.declare(Fact(car="BMW_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/BMW_Bleu.jpg")
+        im.show()
+
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
           Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
@@ -407,10 +404,10 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_23(self):
-        self.declare(Fact(car="BMW_Bleu"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
-     
+        self.declare(Fact(car="BMW_Noir"))
+        im = Image.open("Cars_details/Cars_photos/BMW_Noir.jpg")
+        im.show()
+
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
           Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
@@ -420,9 +417,9 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_24(self):
         self.declare(Fact(car="BMW_Blanc"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
-  
+        im = Image.open("Cars_details/Cars_photos/BMW_Blanc.jpg")
+        im.show()
+
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
           Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
@@ -432,8 +429,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_25(self):
         self.declare(Fact(car="audi_Rouge"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/audi_Rouge.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
@@ -443,10 +440,10 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="oui"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
     def car_26(self):
-        self.declare(Fact(car="audi_Noir"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
- 
+        self.declare(Fact(car="audi_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/audi_Bleu.jpg")
+        im.show()
+
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
           Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
@@ -455,9 +452,9 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="oui"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_27(self):
-        self.declare(Fact(car="audi_Bleu"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        self.declare(Fact(car="audi_Noir"))
+        im = Image.open("Cars_details/Cars_photos/audi_Noir.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
@@ -467,9 +464,10 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="oui"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_28(self):
-        self.declare(Fact(car="audi_blanc"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        self.declare(Fact(car="audi_Blanc"))
+        im = Image.open("Cars_details/Cars_photos/audi_Blanc.jpg")
+        im.show()
+
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
           Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
@@ -479,8 +477,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_29(self):
         self.declare(Fact(car="wallyscar_Rouge"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/wallyscar_Rouge.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
@@ -490,22 +488,9 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="non"), Fact(CA="oui"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
     def car_30(self):
-        self.declare(Fact(car="wallyscar_Noir"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
-
- 
-    @Rule(Fact(action='find_car'),
-          Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
-          Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
-          Fact(P2="non"), Fact(V4="non"), Fact(V2="oui"),
-          Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
-          Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
-          Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
-    def car_31(self):
         self.declare(Fact(car="wallyscar_Bleu"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/wallyscar_Bleu.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
@@ -513,11 +498,23 @@ class findYourCar(KnowledgeEngine):
           Fact(P2="non"), Fact(V4="non"), Fact(V2="oui"),
           Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
-          Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
+          Fact(C2="oui"), Fact(C3="oui"), Fact(C4="non"))
+    def car_31(self):
+        self.declare(Fact(car="wallyscar_Noir"))
+        im = Image.open("Cars_details/Cars_photos/wallyscar_Noir.jpg")
+        im.show()
+
+    @Rule(Fact(action='find_car'),
+          Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
+          Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
+          Fact(P2="non"), Fact(V4="non"), Fact(V2="oui"),
+          Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
+          Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
+          Fact(C2="oui"), Fact(C3="non"), Fact(C4="oui"))
     def car_32(self):
         self.declare(Fact(car="wallyscar_Blanc"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/wallyscar_Blanc.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
@@ -528,20 +525,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_33(self):
         self.declare(Fact(car="KIA_Rouge"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
-
-    @Rule(Fact(action='find_car'),
-          Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
-          Fact(CE="non"), Fact(CD="oui"), Fact(P5="oui"),
-          Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
-          Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
-          Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
-          Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
-    def car_34(self):
-        self.declare(Fact(car="KIA_Bleu"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()   
+        im = Image.open("Cars_details/Cars_photos/KIA_Rouge.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
@@ -550,11 +535,23 @@ class findYourCar(KnowledgeEngine):
           Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
+    def car_34(self):
+        self.declare(Fact(car="KIA_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/KIA_Bleu.jpg")
+        im.show()
+
+    @Rule(Fact(action='find_car'),
+          Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
+          Fact(CE="non"), Fact(CD="oui"), Fact(P5="oui"),
+          Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
+          Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
+          Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
+          Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_35(self):
         self.declare(Fact(car="KIA_Noir"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show() 
-     
+        im = Image.open("Cars_details/Cars_photos/KIA_Noir.jpg")
+        im.show()
+
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
           Fact(CE="non"), Fact(CD="oui"), Fact(P5="oui"),
@@ -564,8 +561,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_36(self):
         self.declare(Fact(car="KIA_Blanc"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/KIA_Blanc.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
@@ -576,20 +573,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_37(self):
         self.declare(Fact(car="mazda_Rouge"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
-
-    @Rule(Fact(action='find_car'),
-          Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
-          Fact(CE="non"), Fact(CD="oui"), Fact(P5="oui"),
-          Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
-          Fact(A="non"), Fact(M="oui"), Fact(MA="oui"),
-          Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
-          Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
-    def car_38(self):
-        self.declare(Fact(car="mazda_Bleu"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/mazda_Rouge.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
@@ -598,10 +583,22 @@ class findYourCar(KnowledgeEngine):
           Fact(A="non"), Fact(M="oui"), Fact(MA="oui"),
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
+    def car_38(self):
+        self.declare(Fact(car="mazda_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/mazda_Bleu.jpg")
+        im.show()
+
+    @Rule(Fact(action='find_car'),
+          Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
+          Fact(CE="non"), Fact(CD="oui"), Fact(P5="oui"),
+          Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
+          Fact(A="non"), Fact(M="oui"), Fact(MA="oui"),
+          Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
+          Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_39(self):
         self.declare(Fact(car="mazda_Noir"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/mazda_Noir.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="oui"), Fact(BF="non"),
@@ -612,9 +609,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_40(self):
         self.declare(Fact(car="mazda_Blanc"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
-
+        im = Image.open("Cars_details/Cars_photos/mazda_Blanc.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -625,20 +621,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_41(self):
         self.declare(Fact(car="peugeot_Rouge"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
-
-    @Rule(Fact(action='find_car'),
-          Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
-          Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
-          Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
-          Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
-          Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
-          Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
-    def car_42(self):
-        self.declare(Fact(car="peugeot_Bleu"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/peugeot_Rouge.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -647,10 +631,22 @@ class findYourCar(KnowledgeEngine):
           Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
+    def car_42(self):
+        self.declare(Fact(car="peugeot_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/peugeot_Bleu.jpg")
+        im.show()
+
+    @Rule(Fact(action='find_car'),
+          Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
+          Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
+          Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
+          Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
+          Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
+          Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_43(self):
         self.declare(Fact(car="peugeot_Noir"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/peugeot_Noir.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -661,44 +657,44 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_44(self):
         self.declare(Fact(car="peugeot_Blanc"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/peugeot_Blanc.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
           Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
-          Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
-          Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
+          Fact(P2="non"), Fact(V4="oui"), Fact(V2=""),
+          Fact(A="non"), Fact(M="oui"), Fact(MA=""),
           Fact(SA="non"), Fact(CA="oui"), Fact(C1="oui"),
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_45(self):
         self.declare(Fact(car="volkswagen_Rouge"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/volkswagen_Rouge.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
           Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
-          Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
-          Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
+          Fact(P2="non"), Fact(V4="oui"), Fact(V2=""),
+          Fact(A="non"), Fact(M="oui"), Fact(MA=""),
           Fact(SA="non"), Fact(CA="oui"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
     def car_46(self):
-        self.declare(Fact(car="volkswagen_Noir"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        self.declare(Fact(car="volkswagen_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/volkswagen_Bleu.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
           Fact(CE="oui"), Fact(CD="non"), Fact(P5="oui"),
-          Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
-          Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
+          Fact(P2="non"), Fact(V4="oui"), Fact(V2=""),
+          Fact(A="non"), Fact(M="oui"), Fact(MA=""),
           Fact(SA="non"), Fact(CA="oui"), Fact(C1="oui"),
           Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_47(self):
-        self.declare(Fact(car="volkswagen_Bleu"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        self.declare(Fact(car="volkswagen_Noir"))
+        im = Image.open("Cars_details/Cars_photos/volkswagen_Noir.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -709,8 +705,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_48(self):
         self.declare(Fact(car="volkswagen_Blanc"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/volkswagen_Blanc.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -721,32 +717,32 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_49(self):
         self.declare(Fact(car="renault_Rouge"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/renault_Rouge.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
-           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
+          Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
           Fact(CE="non"), Fact(CD="oui"), Fact(P5="oui"),
           Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
           Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
           Fact(SA="oui"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
     def car_50(self):
-        self.declare(Fact(car="renault_Noir"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        self.declare(Fact(car="renault_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/renault_Bleu.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
-           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
+          Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
           Fact(CE="non"), Fact(CD="oui"), Fact(P5="oui"),
           Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
           Fact(A="non"), Fact(M="oui"), Fact(MA="non"),
           Fact(SA="oui"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_51(self):
-        self.declare(Fact(car="renault_Bleu"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        self.declare(Fact(car="renault_Noir"))
+        im = Image.open("Cars_details/Cars_photos/renault_Noir.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -757,8 +753,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_52(self):
         self.declare(Fact(car="renault_Blanc"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/renault_Blanc.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -769,8 +765,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_53(self):
         self.declare(Fact(car="fiat_Rouge"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/fiat_Rouge.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -780,9 +776,9 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
     def car_54(self):
-        self.declare(Fact(car="fiat_Noir"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        self.declare(Fact(car="fiat_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/fiat_Bleu.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -792,10 +788,10 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_55(self):
-        self.declare(Fact(car="fiat_Bleu"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
-    
+        self.declare(Fact(car="fiat_Noir"))
+        im = Image.open("Cars_details/Cars_photos/fiat_Noir.jpg")
+        im.show()
+
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
           Fact(CE="non"), Fact(CD="oui"), Fact(P5="oui"),
@@ -805,8 +801,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
     def car_56(self):
         self.declare(Fact(car="fiat_Blanc"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/fiat_Blanc.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -817,8 +813,8 @@ class findYourCar(KnowledgeEngine):
           Fact(C2="non"), Fact(C3="non"), Fact(C4="non"))
     def car_57(self):
         self.declare(Fact(car="citroen_Rouge"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        im = Image.open("Cars_details/Cars_photos/citroen_Rouge.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -828,9 +824,9 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="oui"), Fact(C3="non"), Fact(C4="non"))
     def car_58(self):
-        self.declare(Fact(car="citroen_Noir"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        self.declare(Fact(car="citroen_Bleu"))
+        im = Image.open("Cars_details/Cars_photos/citroen_Bleu.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
           Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
@@ -840,26 +836,27 @@ class findYourCar(KnowledgeEngine):
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="oui"), Fact(C4="non"))
     def car_59(self):
-        self.declare(Fact(car="citroen_Bleu"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        self.declare(Fact(car="citroen_Noir"))
+        im = Image.open("Cars_details/Cars_photos/citroen_Noir.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'),
-         Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
+          Fact(BE="non"), Fact(BM="non"), Fact(BF="oui"),
           Fact(CE="non"), Fact(CD="oui"), Fact(P5="oui"),
           Fact(P2="non"), Fact(V4="oui"), Fact(V2="non"),
           Fact(A="oui"), Fact(M="non"), Fact(MA="non"),
           Fact(SA="non"), Fact(CA="non"), Fact(C1="non"),
           Fact(C2="non"), Fact(C3="non"), Fact(C4="oui"))
-    def car_60(self):
+    def car_60(self, car):
         self.declare(Fact(car="citroen_Blanc"))
-        #im = Image.open("C: \Users\Houssem Rouached\Desktop\Projet_IA_Sysexpert\Cars_details\")
-        #im.show()
+        #print("La voiture convenable pour vous est  \""+car+"\"\n")
+        im = Image.open("Cars_details/Cars_photos/citroen_Blanc.jpg")
+        im.show()
 
     @Rule(Fact(action='find_car'), Fact(car=MATCH.car), salience=-998)
     def car(self, car):
         a = car
-        print("La voiture la plus convenable pour vous est  \""+a+"\"\n")
+        print("La voiture convenable pour vous est  \""+a+"\"\n")
 
     @Rule(Fact(action='find_car'),
           Fact(BE=MATCH.BE),
@@ -883,18 +880,18 @@ class findYourCar(KnowledgeEngine):
           NOT(Fact(car=MATCH.car)), salience=-999)
     def not_matched(self, BE, BM, BF, CE, CD, P5, P2, V4, V2, A, M, MA, SA, CA, C1, C2, C3, C4):
         print("Il n'y a pas une voiture pour vos critére ,")
-        listofCar = [BE, BM, BF, CE, CD, P5, P2,
-                      V4, V2, A, M, MA, SA, CA, C1, C2, C3, C4]
-        max_Cart = 0
+        listofcar = [BE, BM, BF, CE, CD, P5, P2,
+                     V4, V2, A, M, MA, SA, CA, C1, C2, C3, C4]
+        max_count = 0
         max_car = ""
         for key, val in details_map.items():
-            Cart = 0
+            count = 0
             temp = eval(key)
-            for i in range(0, len(listofCar)):
-                if (temp[i] == listofCar[i]):
-                    Cart = Cart + 1
-            if Cart > max_Cart:
-                max_Cart = Cart
+            for i in range(0, len(listofcar)):
+                if (temp[i] == listofcar[i]):
+                    count = count + 1
+            if count > max_count:
+                max_count = count
                 max_car = val
         if_not_matching(max_car)
 
